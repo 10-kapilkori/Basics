@@ -1,20 +1,35 @@
 package com.task.basic
 
 fun main() {
-    val result1 = Polymorphism().calculateNum(23, 21)
-    println("The result from Polymorphism class $result1")
-    val result2 = Inheriting().calculateNum(10, 2)
-    println("The result From Inheriting class $result2")
+    val os = OS()
+    os.windows()
+    os.macOS()
+    println()
+    val microsoftLap = MicrosoftLaptop()
+    microsoftLap.windows()
+    println()
+    val macbookLap = MacBook()
+    macbookLap.macOS()
 }
 
-open class Polymorphism {
-    open fun calculateNum(a: Int, b: Int): Int {
-        return a + b
+open class OS {
+    open fun macOS() {
+        println("This is macOS, specifically designed to work in Apple laptops")
+    }
+
+    open fun windows() {
+        println("This is windows, specifically designed to work in Microsoft, HP, Dell and other laptops")
     }
 }
 
-class Inheriting : Polymorphism() {
-    override fun calculateNum(a: Int, b: Int): Int {
-        return a * b
+class MicrosoftLaptop : OS() {
+    override fun windows() {
+        println("Windows 11 is recently introduced, It got some amazing features.")
+    }
+}
+
+class MacBook : OS() {
+    override fun macOS() {
+        println("Apple will be launching macOS 13, this year. They are also about to announce a new MacBook with M2 chip.")
     }
 }

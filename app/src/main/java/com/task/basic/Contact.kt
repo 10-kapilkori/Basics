@@ -11,21 +11,43 @@ fun main() {
     val phone: Long = readLine()!!.toLong()
     println("Please Enter your Email: ")
     val email = readLine().toString()
+    println("Please Enter your WorkPlace: ")
+    val workPlace = readLine().toString()
+    println("Please Enter your Date of Birth: ")
+    val birthDate = readLine().toString()
+    println("Please Enter your Date of NickName: ")
+    val nickname = readLine().toString()
+    println("Please Enter your Address: ")
+    val address = readLine().toString()
 
     println()
 
-    val contact = Contact(firstName, lastName, phone, email)
-    contact.details()
+    Contact(
+        firstName,
+        lastName,
+        phone,
+        email,
+        workPlace = workPlace,
+        birthDate = birthDate,
+        nickname = nickname,
+        address = address
+    )
 }
 
 class Contact(
-    private val first_name: String,
-    private val last_name: String,
-    private val phone: Long,
-    private val email: String
+    first_name: String,
+    last_name: String,
+    phone: Long,
+    email: String,
+    workPlace: String = "",
+    birthDate: String = "",
+    nickname: String = "",
+    address: String = ""
 ) {
-    fun details() {
-        println("This is ${"$first_name $last_name"}, And Please feel free to contact me either via phone number i.e., $phone or email i.e., $email")
+    init {
+        println(
+            "Name: $first_name $last_name\nPhone: $phone\nEmail: $email\nWorkPlace: $workPlace\n" +
+                    "BirthDate: $birthDate\nNickName: $nickname\nAddress: $address"
+        )
     }
 }
-
