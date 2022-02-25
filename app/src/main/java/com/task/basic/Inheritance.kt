@@ -7,8 +7,9 @@ fun main() {
 
     val vehicle = Vehicle(4)
     vehicle.hondaCity()
-    vehicle.splendor()
-    vehicle.bodyOfVehicle()
+    vehicle.splendor((0..20).random())
+    val parts = vehicle.bodyOfVehicle(5)
+    println("Parts Required: $parts")
     println()
 
     val hybrid = HybridPlatform()
@@ -51,25 +52,39 @@ class Vehicle(private val rate: Int) : Car() {
         println("This vehicle is rated at $rate")
     }
 
-    override fun splendor() {
-        super.splendor()
+    override fun splendor(inspect: Int) {
+        super.splendor(inspect)
         println("This vehicle is manufactured by Hero company")
+    }
+
+    fun a() {
+        super.bodyOfVehicle(23)
     }
 }
 
 open class Car : Body() {
     open fun hondaCity() {
-        println("It is a four wheeler vehicle and uses Diesel.")
+        val randomString = "Wheeler"
+        if (randomString.contains("something"))
+            println("It is a four wheeler vehicle and uses Diesel.")
     }
 
-    open fun splendor() {
-        println("It is a two wheeler vehicle and uses petrol.")
+    open fun splendor(inspect: Int) {
+        if (inspect in (0..10))
+            println("It is a two wheeler vehicle and uses petrol.")
+    }
+
+    override fun bodyOfVehicle(requiredPart: Int): Float {
+        super.bodyOfVehicle(requiredPart)
+        val cost = 100
+        return cost * 10f
     }
 }
 
 open class Body {
-    open fun bodyOfVehicle() {
+    open fun bodyOfVehicle(requiredPart: Int): Float {
         println("It designs the body of the vehicle.")
+        return requiredPart * 44.99f
     }
 }
 

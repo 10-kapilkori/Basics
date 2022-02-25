@@ -25,6 +25,10 @@ class Employer(
 class Client {
     private var name: String = ""
 
+    init {
+        println("Initializer block")
+    }
+
     constructor(client_name: String, client_company: String, client_bond: Int) {
         this.name = client_name
 

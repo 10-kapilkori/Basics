@@ -16,7 +16,7 @@ fun main() {
     concatForStringBuilder(water)
     println("Updated String: $water ")
 }
-
+//what will happen if in the memoiry
 fun concatForString(passedString: String) {
     var secondString = passedString
     secondString += " There"
