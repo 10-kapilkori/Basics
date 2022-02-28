@@ -1,5 +1,7 @@
 package com.task.testcases
 
+import kotlin.random.Random
+
 fun main() {
     val word = "Philadelphia"
     val secondWord = StringBuffer(word)
@@ -13,7 +15,7 @@ fun main() {
 fun forStringBuffer(word: StringBuffer) {
     val startTime = System.currentTimeMillis()
     for (i in 1 until 1000000) {
-        word.append(i)
+        word.append((0..100000).random())
         word.append(" ")
     }
 
@@ -23,7 +25,7 @@ fun forStringBuffer(word: StringBuffer) {
 fun forStringBuilder(word: StringBuilder) {
     val startTime = System.currentTimeMillis()
     for (i in 1 until 1000000) {
-        word.append(i)
+        word.append((0..100000).random())
         word.append(" ")
     }
 
