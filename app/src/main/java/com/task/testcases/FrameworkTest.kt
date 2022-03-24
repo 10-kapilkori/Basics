@@ -6,6 +6,7 @@ fun main() {
     forMap(105, "MNO")
 }
 
+//  arraylist: changes, updating, generic/non-generic,
 fun forMap(key: Int, value: String) {
     val students = mutableMapOf(101 to "ABC", 102 to "DEF", 103 to "GHI", 104 to "JKL")
     students[key] = value

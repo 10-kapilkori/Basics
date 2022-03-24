@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Basic</string>
+    <string name="button_from_ll">Button From LL</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="relative_layout">Relative Layout</string>
+    <string name="button_from_rl">Button From RL</string>
+    <string name="none">No Text</string>
+    <string name="changed_text">Text Changed</string>
+    <string name="reverted_text">Text Reverted</string>
+    <string name="ok">OK</string>
 </resources>

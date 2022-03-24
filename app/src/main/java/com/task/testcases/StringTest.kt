@@ -1,9 +1,9 @@
 package com.task.testcases
 
-import kotlin.random.Random
-
 fun main() {
-    val word = "Philadelphia"
+    var word = "Philadelphia"
+    word = "Full creative"
+    val anotherWord = word
     val secondWord = StringBuffer(word)
     val thirdWord = StringBuilder(word)
 
@@ -34,7 +34,7 @@ fun forStringBuilder(word: StringBuilder) {
 
 fun forPalindromeString(word: String) {
     var reversed = ""
-    for (i in word.length - 1 downTo 0) {
+    for (i in word.length downTo 0) {
         reversed += word[i]
     }
     if (reversed == word)
@@ -43,3 +43,4 @@ fun forPalindromeString(word: String) {
         println("The string is not Palindrome")
 }
 
+//Exception handling
